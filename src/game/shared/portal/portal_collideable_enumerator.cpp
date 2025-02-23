@@ -29,9 +29,10 @@ CPortalCollideableEnumerator::CPortalCollideableEnumerator( const CProp_Portal *
 
 IterationRetval_t CPortalCollideableEnumerator::EnumElement( IHandleEntity *pHandleEntity )
 {
-	EHANDLE hEnt = pHandleEntity->GetRefEHandle();
-	
-	CBaseEntity *pEnt = hEnt.Get();
+	//INFO(rwf93): Unsure if this is the best way to do it. Stinky dynamic_cast.
+	CBaseHandle hEnt = pHandleEntity->GetRefEHandle();
+	CBaseEntity *pEnt = dynamic_cast<CBaseEntity*>(pHandleEntity);
+
 	if( pEnt == NULL ) //I really never thought this would be necessary
 		return ITERATION_CONTINUE;
 	

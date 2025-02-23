@@ -16,11 +16,6 @@
 
 class CHudViewport;
 
-namespace vgui
-{
-	typedef unsigned long HScheme;
-}
-
 class ClientModePortalNormal : public ClientModeShared 
 {
 DECLARE_CLASS( ClientModePortalNormal, ClientModeShared );
