@@ -187,12 +187,14 @@ void TE_PlayerAnimEvent( CBasePlayer *pPlayer, PlayerAnimEvent_t event, int nDat
 //			objectID - 
 //-----------------------------------------------------------------------------
 
+#if 0
 void* SendProxy_SendNonLocalDataTable( const SendProp *pProp, const void *pStruct, const void *pVarData, CSendProxyRecipients *pRecipients, int objectID )
 {
 	pRecipients->SetAllRecipients();
 	pRecipients->ClearRecipient( objectID - 1 );
 	return ( void * )pVarData;
 }
+#endif
 
 // -------------------------------------------------------------------------------- //
 // Tables.

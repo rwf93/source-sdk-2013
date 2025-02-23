@@ -1312,7 +1312,7 @@ void CWeaponDODBase::Smack()
 		{
 			CEffectData data;
 			data.m_nHitBox = atoi( options );
-			data.m_hEntity = GetPlayerOwner() ? GetPlayerOwner()->GetRefEHandle() : INVALID_EHANDLE_INDEX;
+			data.m_hEntity = GetPlayerOwner() ? GetPlayerOwner()->GetRefEHandle() : CBaseHandle( INVALID_EHANDLE );
 			pViewModel->GetAttachment( 2, data.m_vOrigin, data.m_vAngles );
 
 			DispatchEffect( "DOD_EjectBrass", data );
