@@ -175,7 +175,7 @@ void CHostage::Spawn( void )
 
 	SetUse( &CHostage::HostageUse );
 
-	m_leader = NULL;
+	m_leader = INVALID_EHANDLE;
 	m_reuseTimer.Invalidate();
 	m_hasBeenUsed = false;
 
@@ -960,7 +960,7 @@ void CHostage::GiveCTUseBonus( CCSPlayer *rescuer )
  */
 void CHostage::Idle( void )
 {
-	m_leader = NULL;
+	m_leader = INVALID_EHANDLE;
 }
 
 //-----------------------------------------------------------------------------------------------------
