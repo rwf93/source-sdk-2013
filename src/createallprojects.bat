@@ -1,1 +1,1 @@
-devtools\bin\vpc.exe /hl2mp /tf /cstrike /define:SOURCESDK +everything /mksln everything.sln
+devtools\bin\vpc.exe /hl2mp /tf /cstrike /portal /define:SOURCESDK +everything /mksln everything.sln
