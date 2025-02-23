@@ -5,7 +5,7 @@
 //-----------------------------------------------------------------------------
 
 $Macro SRCDIR		"..\.."
-$Macro GAMENAME 	"cstrike"
+$Macro GAMENAME 	"mod_cstrike"
 
 $Include "$SRCDIR\game\client\client_base.vpc"
 
@@ -83,8 +83,9 @@ $Project "Client (CStrike)"
 			$File	"$SRCDIR\game\shared\cstrike\cs_gamerules.h"
 			$File	"$SRCDIR\game\shared\cstrike\cs_gamestats_shared.cpp"
 			$File	"$SRCDIR\game\shared\cstrike\cs_gamestats_shared.h"
-			$File	"$SRCDIR\game\shared\steamworks_gamestats.cpp"
-			$File	"$SRCDIR\game\shared\steamworks_gamestats.h"			
+			$File	"$SRCDIR\game\shared\steamworks_gamestats.cpp" [!$SOURCESDK]
+			$File	"$SRCDIR\game\shared\steamworks_gamestats_sdk.cpp" [$SOURCESDK]
+			$File	"$SRCDIR\game\shared\steamworks_gamestats.h"		
 			$File	"cstrike\cs_in_main.cpp"
 			$File	"$SRCDIR\game\shared\cstrike\cs_player_shared.cpp"
 			$File	"$SRCDIR\game\shared\cstrike\cs_playeranimstate.cpp"

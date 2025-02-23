@@ -5,7 +5,7 @@
 //-----------------------------------------------------------------------------
 
 $Macro SRCDIR		"..\.."
-$Macro GAMENAME 	"cstrike"
+$Macro GAMENAME 	"mod_cstrike"
 
 $Include "$SRCDIR\game\server\server_base.vpc"
 $Include "$SRCDIR\game\server\nav_mesh.vpc"
@@ -20,7 +20,7 @@ $Configuration
 
 	$Linker
 	{
-		$AdditionalDependencies			"$BASE ws2_32.lib" [$WIN32]
+		$AdditionalDependencies			"$BASE ws2_32.lib" [$WIN32 || $WIN64]
 	}
 }
 
@@ -64,8 +64,9 @@ $Project "Server (CStrike)"
 			$File	"cstrike\cs_gamestats.h"			
 			$File	"$SRCDIR\game\shared\cstrike\cs_gamestats_shared.cpp"
 			$File	"$SRCDIR\game\shared\cstrike\cs_gamestats_shared.h"
-			$File	"$SRCDIR\game\shared\steamworks_gamestats.cpp"
-			$File	"$SRCDIR\game\shared\steamworks_gamestats.h"			
+			$File	"$SRCDIR\game\shared\steamworks_gamestats.cpp" [!$SOURCESDK]
+			$File	"$SRCDIR\game\shared\steamworks_gamestats_sdk.cpp" [$SOURCESDK]
+			$File	"$SRCDIR\game\shared\steamworks_gamestats.h"
 			$File	"cstrike\cs_hltvdirector.cpp"
 			$File	"cstrike\cs_player.cpp"
 			$File	"cstrike\cs_player.h"
